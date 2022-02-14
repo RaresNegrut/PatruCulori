@@ -25,17 +25,16 @@ void colorTheRooms(int roomIndex, int numberOfRooms, int numberOfColors, int adj
 		cout << endl;
 	}
 	else
-		if(roomIndex <= numberOfRooms)
-	for (int colorNumber = 1; colorNumber <= numberOfColors; colorNumber++)
-	{
-		if (isColouringViable(numberOfRooms, roomIndex, colorNumber, adjacencyMatrix, coloredRooms)) {
-			coloredRooms[roomIndex] = colorNumber;
+		for (int colorNumber = 1; colorNumber <= numberOfColors; colorNumber++)
+		{
+			if (isColouringViable(numberOfRooms, roomIndex, colorNumber, adjacencyMatrix, coloredRooms)) {
+				coloredRooms[roomIndex] = colorNumber;
 
-			colorTheRooms(roomIndex + 1, numberOfRooms, numberOfColors, adjacencyMatrix, coloredRooms);
+				colorTheRooms(roomIndex + 1, numberOfRooms, numberOfColors, adjacencyMatrix, coloredRooms);
 
-			coloredRooms[roomIndex] = 0;
+				coloredRooms[roomIndex] = 0;
+			}
 		}
-	}
 }
 
 
